@@ -11,40 +11,50 @@ namespace Assignment_5
     {
         static void Main(string[] args)
         {
-            { new GenerateList().Run(57); }
+            new GeneralList().Run(57);
         }
-        class GenerateList
+
+
+        class GeneralList
         {
             const int LEN = 100;
-            ArrayList ListQ;
-            public void Run(int AddupToNumber)
-            {
-                Random r = new Random();
-                ListQ = new ArrayList();
-                for (int i = 0; i < LEN; i++) { ListQ.Add(r.Next(100)); }
-                this.FindTwoNumberThatAddUpTO(AddupToNumber);
-                
-            }
-
-            public void FindTwoNumberThatAddUpTO(int addupToNumber)
+            public ArrayList ListQ;
+            int AddUpToNumber = 0;
+            public void Run(int AddUpToNumber)
 
             {
                 Random r = new Random();
                 ListQ = new ArrayList();
-                int n1 = 0;
-                int n2 = 0;
                 for (int i = 0; i < LEN; i++)
                 {
-                    int num1 = ListQ.Add(r.Next(100));
-                    int num2 = ListQ.Add(r.Next(100));
-                    if (num1 + num2 == a)
+                    ListQ.Add(r.Next(100));
+                }
+                this.findTwoNumbersThatAddUpTo();
+            }
+
+            public void findTwoNumbersThatAddUpTo()
+            {
+                foreach (int num1 in ListQ)
+                {
+                    int a, b;
+                    a = num1;
+                    foreach (int num2 in ListQ)
                     {
-                        n1 = num1;
-                        n2 = num2;
-                        Console.WriteLine($"The two numbers are {n1} and {n2}.");
+                        b = num2;
+                        if (a + b == 57)
+                        {
+                            Console.WriteLine("The Perfect match is found. Numbers are: " + a + " " + b);
+                        }
                     }
 
+
                 }
+                Console.ReadLine();
             }
-        } }
-    
+
+
+
+
+        }
+    }
+}
