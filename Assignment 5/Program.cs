@@ -23,12 +23,28 @@ namespace Assignment_5
                 ListQ = new ArrayList();
                 for (int i = 0; i < LEN; i++) { ListQ.Add(r.Next(100)); }
                 this.FindTwoNumberThatAddUpTO(AddupToNumber);
+                
             }
 
-            private void FindTwoNumberThatAddUpTO(int addupToNumber)
+            public void FindTwoNumberThatAddUpTO(int addupToNumber)
+
             {
-                throw new NotImplementedException();
+                Random r = new Random();
+                ListQ = new ArrayList();
+                int n1 = 0;
+                int n2 = 0;
+                for (int i = 0; i < LEN; i++)
+                {
+                    int num1 = ListQ.Add(r.Next(100));
+                    int num2 = ListQ.Add(r.Next(100));
+                    if (num1 + num2 == a)
+                    {
+                        n1 = num1;
+                        n2 = num2;
+                        Console.WriteLine($"The two numbers are {n1} and {n2}.");
+                    }
+
+                }
             }
-        }
-    }
-}
+        } }
+    
