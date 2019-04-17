@@ -17,6 +17,12 @@ namespace Assignment_5
             const int LEN = 100;
             ArrayList ListQ;
             public void Run(int AddupToNumber)
+            {
+                Random r = new Random();
+                ListQ = new ArrayList();
+                for (int i = 0; i < LEN; i++) { ListQ.Add(r.Next(100)); }
+                this.FindTwoNumberThatAddUpTO(AddupToNumber);
+            }
 
 
         }
